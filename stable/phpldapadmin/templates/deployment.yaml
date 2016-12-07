@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: "{{.Values.Master.ImagePullPolicy}}"
           env:
             - name: PHPLDAPADMIN_LDAP_HOSTS
-              value: {{template "ldap" .}}
+              value: {{ template "ldap" . }}
             - name: PHPLDAPADMIN_HTTPS
               value: "false"
           ports:
