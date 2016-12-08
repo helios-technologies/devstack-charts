@@ -3,4 +3,4 @@ global:
   LdapAdminPassword: changeme
   JenkinsAdminPassword: changeme
   domain: "devstack.work"
-  organisation: "Helios Technilogies"
+  organisation: "Helios Technologies"
