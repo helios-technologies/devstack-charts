@@ -2,5 +2,6 @@ global:
   mariadbRootPassword: changeme
   LdapAdminPassword: changeme
   JenkinsAdminPassword: changeme
+  SysopsPassword: changeme
   domain: "devstack.work"
   organisation: "Helios Technologies"
