@@ -1,11 +1,10 @@
 {{- if .Values.persistence.enabled }}
----
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: {{ template "fullname" . }}
   annotations:
-    volume.beta.kubernetes.io/storage-class: {{ .Values.persistence.storageClass | quote }}
+    volume.alpha.kubernetes.io/storage-class: {{ .Values.persistence.storageClass | quote }}
 spec:
   accessModes:
     - {{ .Values.persistence.accessMode | quote }}
