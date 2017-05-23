@@ -23,6 +23,17 @@ spec:
                 "mountPath": "/opt/gerrit"
               }
             ]
+          },
+          {
+            "name": "chmod-mount",
+            "image": "alpine",
+            "command": ["sh", "-c", "chown -R 1000:1000 /var/gerrit"],
+            "volumeMounts": [
+              {
+                "name": "gerrit-site",
+                "mountPath": "/var/gerrit/review_site"
+              }
+            ]
           }
       ]'
     spec:

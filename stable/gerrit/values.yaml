@@ -3,8 +3,8 @@
 replicaCount: 1
 image:
   repository: kaigara/gerrit
-  tag: 0.0.5
-  pullPolicy: IfNotPresent
+  tag: latest
+  pullPolicy: Always
 service:
   type: ClusterIP
   http:
@@ -14,14 +14,14 @@ service:
     externalPort: 29418
     internalPort: 29418
 resources:
-  limits:
-    cpu: 1
-    memory: 512Mi
   requests:
     cpu: 1
     memory: 512Mi
+  limits:
+    cpu: 1
+    memory: 1024Mi
 persistence:
-  enabled: false
+  enabled: true
   storageClass: generic
   accessMode: ReadWriteMany
   size: 8Gi
