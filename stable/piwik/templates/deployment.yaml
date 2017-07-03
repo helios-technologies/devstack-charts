@@ -1,0 +1,27 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+spec:
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        k8s-app: {{ template "fullname" . }}
+    spec:
+      containers:
+      - image: kaigara/piwik:1.0.0
+        name: piwik
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+          name: piwik
+        volumeMounts:
+          - mountPath: "/var/www/html/config"
+            name: piwik-config
+      volumes:
+      - name: piwik-config
+        persistentVolumeClaim:
+          claimName: {{ template "fullname" . }}

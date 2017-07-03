@@ -1,0 +1,11 @@
+name: piwik
+version: 1.0.0
+description: Chart for Piwik
+keywords:
+- piwik
+home: https://piwik.org
+sources:
+- https://github.com/kaigara-images/piwik
+maintainers:
+- name: Helios Technologies
+  email: support@heliostech.fr

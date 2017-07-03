@@ -1,0 +1,7 @@
+service:
+  type: NodePort
+persistence:
+  enabled: false
+  storageClass: standard
+  accessMode: ReadWriteMany
+  size: 1Gi
