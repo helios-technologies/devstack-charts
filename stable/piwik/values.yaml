@@ -1,5 +1,16 @@
 service:
-  type: NodePort
+  type: ClusterIP
+ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      kubernetes.io/tls-acme: 'true'
+    hosts:
+      - piwik.com
+    tls:
+      - secretName: piwik-tls
+        hosts:
+          - piwik.com
 persistence:
   enabled: false
   storageClass: standard
