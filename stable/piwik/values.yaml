@@ -1,0 +1,3 @@
+name: piwik-main
+image: piwik
+replicas: 1

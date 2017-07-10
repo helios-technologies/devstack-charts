@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+spec:
+  replicas: {{ .Values.replicas }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        name: {{ template "fullname" . }}
+    spec:
+      containers:
+        - name: {{ template "fullname" . }}
+          image: {{ .Values.image }}
+          ports:
+            - containerPort: 80
+              name: piwik
+            - containerPort: 443
+              name: piwik-https

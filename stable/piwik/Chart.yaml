@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Piwik Helm chart for Kubernetes
+name: piwik
+version: 0.1.0
